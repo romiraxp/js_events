@@ -1,0 +1,14 @@
+body {
+    color: #999;
+}
+
+.cells {
+    padding: 1px 1px;
+    margin: 1px 1px;
+    display: inline flex;
+    border: solid,1px,#999;    
+    width: 70px;
+    height: 70px;
+    float: none;
+    vertical-align: middle;
+}

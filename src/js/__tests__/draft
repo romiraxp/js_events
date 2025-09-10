@@ -1,0 +1,17 @@
+import gameFieldCreation from "../tablecreation";
+import gameFieldCleaning from "../tableremoval";
+/** * @jest-environment jsdom */
+
+test('gameFieldCreation function test',() => {
+    gameFieldCreation(2,2);
+
+    const numRow = document.querySelectorAll('.row');
+    const numCells = document.querySelectorAll('.cells');
+
+    gameFieldCleaning();
+    const numRow_new = document.querySelectorAll('.row');
+    const numCells_new = document.querySelectorAll('.cells')
+
+    expect(numRow_new.length).toBe(0);
+    expect(numCells_new.length).toBe(0);    
+})
