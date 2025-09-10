@@ -9,31 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const rowVal = document.querySelector("#number1").value; //получаем значение из поля ввода кол-ва строк
     const colVal = document.querySelector("#number2").value; //получаем значение из поля ввода кол-ва столбцов
     if (!rowVal || !colVal) {
-      alert('Заполните все поля');
+      alert("Заполните все поля");
     } else {
-    gameFieldCleaning(); // вызываем фунцию очистки игрового поля
-    gameFieldCreation(rowVal, colVal); // вызываем фунцию, в которую передаем размерность нашего игрового поля
+      gameFieldCleaning(); // вызываем фунцию очистки игрового поля
+      gameFieldCreation(rowVal, colVal); // вызываем фунцию, в которую передаем размерность нашего игрового поля
 
-    let randomValue = 0; // задаем изначальное значение номера ячейки как первый индекс массива, с коорым затем будем сравнивать новое сгенерированное значение
-    //const showInterval = setInterval(() => {
+      let randomValue = 0; // задаем изначальное значение номера ячейки как первый индекс массива, с коорым затем будем сравнивать новое сгенерированное значение
 
-    const img = document.createElement("img"); // создаем элемент image - наш гоблин
-    const numCol = document.querySelectorAll(".cells"); // находим все элементы div- ячейки
-
-    //в переменную sizeField помещаем размер массива - 1 элемент, тк. индексация с 0.
-    // Мы его юудем использовать для генерации случайного значения- ячейки
-    const sizeField = numCol.length;
-
-    img.src = `${goblin_small}`; //добавляем аттрибут в виде пути импортированного значения
-
-    //let randomValue_new = getRandomValue(0, sizeField); //получаем случайное значение id от 0 до размерности поля, которыми являются ячейки таблицы
-    let randomValue_new = getRandomValue(sizeField); //получаем случайное значение id от 0 до размерности поля, которыми являются ячейки таблицы
-
-    //randomValue = randomValue_new;
-    //numCol[randomValue].append(img);
-
-    setInterval(() => {
-      /*      const img = document.createElement("img"); // создаем элемент image - наш гоблин
+      const img = document.createElement("img"); // создаем элемент image - наш гоблин
       const numCol = document.querySelectorAll(".cells"); // находим все элементы div- ячейки
 
       //в переменную sizeField помещаем размер массива - 1 элемент, тк. индексация с 0.
@@ -42,42 +25,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
       img.src = `${goblin_small}`; //добавляем аттрибут в виде пути импортированного значения
 
-      //let randomValue_new = getRandomValue(0, sizeField); //получаем случайное значение id от 0 до размерности поля, которыми являются ячейки таблицы
-      //let randomValue_new = getRandomValue(sizeField); //получаем случайное значение id от 0 до размерности поля, которыми являются ячейки таблицы*/
+      let randomValue_new = getRandomValue(sizeField); //получаем случайное значение id от 0 до размерности поля, которыми являются ячейки таблицы
 
-      const imgToRemove = document.querySelector("img"); //т.к. по сути у нас всегда будет 1 гоблин, то помещаем в переменную для удаления первый найденный
+      setInterval(() => {
+        const imgToRemove = document.querySelector("img"); //т.к. по сути у нас всегда будет 1 гоблин, то помещаем в переменную для удаления первый найденный
 
-      // если изображение найдено, то удалем его сначала
-      if (imgToRemove) {
-        imgToRemove.remove();
-      }
+        // если изображение найдено, то удалем его сначала
+        if (imgToRemove) {
+          imgToRemove.remove();
+        }
 
-      // для того, чтобы гоблин "не падал" в ту же самую ячейку, сравниваем наше новое случайное значение с прошлым и,
-      // если они разные, то добавляем гоблина в соотвтесвующую ячейку- div
-      randomValue = randomValue_new;
-      numCol[randomValue].append(img);
-
-      //получаем случайное значение id от 0 до размерности поля, которыми являются ячейки таблиц
-      while (randomValue == randomValue_new)
-        randomValue_new = getRandomValue(sizeField);
-      //randomValue_new = getRandomValue(sizeField);
-      randomValue = randomValue_new;
-
-      /*if (randomValue != randomValue_new) {
+        // для того, чтобы гоблин "не падал" в ту же самую ячейку, сравниваем наше новое случайное значение с прошлым и,
+        // если они разные, то добавляем гоблина в соотвтесвующую ячейку- div
         randomValue = randomValue_new;
-        numCol[randomValue].appendChild(img);
-      } else if ((randomValue = sizeField)) {
-        randomValue = randomValue - 1;
-        numCol[randomValue].appendChild(img);
-      } else {
-        randomValue++;
-        numCol[randomValue].appendChild(img);
-      }*/
-      // остановить процесс показа гоблина случайным порядком по истечении 10 сек
-      /*setTimeout(() => {
+        numCol[randomValue].append(img);
+
+        //получаем случайное значение id от 0 до размерности поля, которыми являются ячейки таблиц
+        while (randomValue == randomValue_new)
+          randomValue_new = getRandomValue(sizeField);
+        randomValue = randomValue_new;
+
+        // остановить процесс показа гоблина случайным порядком по истечении 10 сек
+        /*setTimeout(() => {
         clearInterval(showInterval);
     }, 3000);*/
-    }, 1000);
+      }, 1000);
     }
   });
 });
