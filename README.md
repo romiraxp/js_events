@@ -1,5 +1,6 @@
 [![Netology AHJ](https://github.com/romiraxp/js_events/actions/workflows/web.yml/badge.svg?branch=main)](https://github.com/romiraxp/js_events/actions/workflows/web.yml)
 
+https://romiraxp.github.io/js_events/
 
 # Домашнее задание к занятию "3.Обработка событий"
 

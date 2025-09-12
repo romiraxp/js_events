@@ -1,3 +1,4 @@
+//import Table from "./tablecreation";
 import gameFieldCleaning from "./tableremoval"; // импорт функции очистки игрового поля
 import gameFieldCreation from "./tablecreation"; // импорт функции создания игрового поля
 import getRandomValue from "./randomfunc"; // импорт функции генератора случайных чисел
@@ -5,12 +6,17 @@ import goblin_small from "../../pic/goblin_small.png"; // для того, чт�
 
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".btn");
+  const totalSuccess = document.querySelector(".cells_success");
   btn.addEventListener("click", () => {
     const rowVal = document.querySelector("#number1").value; //получаем значение из поля ввода кол-ва строк
     const colVal = document.querySelector("#number2").value; //получаем значение из поля ввода кол-ва столбцов
+
     if (!rowVal || !colVal) {
       alert("Заполните все поля");
     } else {
+      //const table = new Table()
+      //      table.gameFieldCleaning(); // вызываем фунцию очистки игрового поля
+      //      table.gameFieldCreation(rowVal, colVal); // вызываем фунцию, в которую передаем размерность нашего игрового поля
       gameFieldCleaning(); // вызываем фунцию очистки игрового поля
       gameFieldCreation(rowVal, colVal); // вызываем фунцию, в которую передаем размерность нашего игрового поля
 
@@ -29,9 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setInterval(() => {
         const imgToRemove = document.querySelector("img"); //т.к. по сути у нас всегда будет 1 гоблин, то помещаем в переменную для удаления первый найденный
-
         // если изображение найдено, то удалем его сначала
         if (imgToRemove) {
+          imgToRemove.addEventListener("click", (e) => {
+            //debugger;
+            e.preventDefault();
+            e.target.closest("div");
+            totalSuccess.textContent = Number(totalSuccess.textContent) + 1;
+          });
           imgToRemove.remove();
         }
 

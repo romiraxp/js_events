@@ -10,17 +10,27 @@
 <body>
 <h1>Try to catch me!</h1>
 <!--<img src="img/netology.svg" alt="Netology Logo">-->
-<div class = "input_data">Укажите размерность игрового поля
-    <br>
-    <label for="number">Кол-во строк</label><br>
-    <input type="number" name="number" id="number1" min="2" max="10"/><br>
-    <label for="number2">Кол-во столбцов</label><br>
-    <input type="number" name="number2" id="number2" min="2" max="10"/><br><br>
-    <button class="btn" type="button">
-        Начать
-    </button>
+<div class="field">
+  <div class = "input_data">Укажите размерность игрового поля
+      <br>
+      <label for="number">Кол-во строк</label><br>
+      <input type="number" name="number" id="number1" min="3" max="10"/><br>
+      <label for="number2">Кол-во столбцов</label><br>
+      <input type="number" name="number2" id="number2" min="3" max="10"/><br><br>
+      <button class="btn" type="button">
+          Начать
+      </button>
     <!--<input type="button" name="btn" value="Начать"/>-->
     <!--<input type="number" name="number"/>-->
+  </div>
+  <div class = "total">Очки
+    <div class = "total_to_win">Кол-во Успешно<br>
+      <div class = "cells_success">0</div>
+    </div>
+    <div class = "total_to_lose">Кол-во промахов<br>
+      <div class = "cells_miss">0</div>
+    </div>  
+  </div>
 </div>
 <hr>
 </body>

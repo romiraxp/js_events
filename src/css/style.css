@@ -2,7 +2,11 @@ body {
     color: #999;
 }
 
-.cells {
+.field {
+    display: inline flex;
+}
+
+.cells, .cells_success, .cells_miss {
     padding: 1px 1px;
     margin: 1px 1px;
     display: inline flex;
@@ -11,4 +15,19 @@ body {
     height: 70px;
     float: none;
     vertical-align: middle;
+    cursor: url('../../pic/hammer.cur'), 
+            pointer;
+}
+
+.cells_success, .cells_miss {
+    width: 30px;
+    height: 20px;
+    float: none;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.total {
+    padding-left: 20px;
+    margin: 1px 1px;
 }
