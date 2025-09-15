@@ -31,3 +31,12 @@ body {
     padding-left: 20px;
     margin: 1px 1px;
 }
+
+.result {
+    display: none;
+}
+
+.bts {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
